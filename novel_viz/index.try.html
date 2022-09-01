@@ -1,0 +1,71 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>{{config.APP_title}}</title>
+<link rel="stylesheet" href="static/css/style.css" media="screen"/>
+<body>
+  <div id='chart'>
+    <div id="title">Visualizing the Nobel prize</div>
+    <div id="info">Data viz with Python and Javascript. The data used was scraped from <a href="https://en.wikipedia.org/wiki/List_of_Nobel_laureates_by_country">List of winners by country</a></div>
+    <div id="nbviz">
+      <div id="nobel-menu">
+	<div id="cat-select">Category<select></select></div>
+	<div id="gender-select">Gender
+	  <select><option value="All">All</option>
+	    <option value="female">Female</option>
+	    <option value="male">Male</option></select></div>
+	<div id="country-select">Country<select></select></div>
+	<div id="metric-radio">
+	  Number of winners:&nbsp;
+	  <form><label>absolute
+	      <input type="radio" name="mode" value="0" checked></label>
+	    <label>per-capita<input type="radio" name="mode" values="1"></label>
+	</form></div>
+      </div><!--end menu-bar-->
+      <div id="chart-holder" class="_dev">
+	<div id="nobel-time"></div>
+	<div id="nobel-map">Maps require GeoJSON</div>
+	<div id="nobel-list"><h2>Selected winners</h2>
+	  <table><thead>
+	      <tr><th id="year">Year</th>
+		<th id="category">Category</th>
+		<th id="name">Name</th></tr></thead>
+	    <tbody></tbody></table></div>
+	<div id="nobel-winner">
+	  <div id="picbox"></div>
+	  <div id="winner-title"></div>
+	  <div id="infobox">
+	    <div id="property">
+	      <div class="label">Category</div>
+	      <span name="category"></span></div>
+	    <div id="property">
+	      <div class="label">Year</div>
+	      <span name="year"></span></div>
+	    <div id="property">
+	      <div class="label">Country</div>
+	      <span name="country"></span></div>
+	  </div>
+	  <div id="biobox"></div>
+	  <div id="readmore"><a href='#'>Read more at Wikipedia</a></div>
+	</div>
+	<div id="nobel-bar"></div>
+      </div><!--end nobel-viz compo-->
+    </div>
+  </div>
+  
+  <script src="//code/jquery-3.5.1.min.js"></script>
+  <script src="//code/d3.v6.min.js"></script>
+  <script src="static/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.20/topojson.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
+  <script src="static/lib/crossfilter.min.js"></script>
+  <script src="static/js/nbviz_core.js"></script>
+  <script src="static/js/nbviz_menu.js"></script>
+  <script src="static/js/nbviz_map.js"></script>
+  <script src="static/js/nbviz_bar.js"></script>
+  <script src="static/js/nbviz_time.js"></script>
+  <script src="static/js/nbviz_details.js"></script>
+  <script src="static/js/nbviz_main.js"></script>
+</body>
+</html>
