@@ -1,4 +1,5 @@
 .DS_Store
+*/.DS_Store
 nobel_winners/spiders/__pycache__/*
 nobel_winners/data/*
 
